@@ -21,9 +21,8 @@
            btAction.caption = action.caption;
          }
 
-              <br>`
      })
-     panelStat.innerHTML = htmlCode
+     //panelStat.innerHTML = htmlCode
      console.log(`show actions `+htmlCode)
  }
 
