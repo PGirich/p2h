@@ -2,24 +2,27 @@
  import {loadActionsList, actionsList, hero} from "./p2hdatamodel.js";
 
  const $panelStat = document.getElementById("panelStat");
-
+ console.log($panelStat)
  loadActionsList();
  showActions();
 
  function showActions() {
      let htmlCode = `actions <br>`;
      actionsList.forEach(action => {
-         const btId = "action.${action.name}";
-         const $btAction = $panelStat.getElementByID(btId);
-         if (btAction === null) {
-           btAction = $panelStat.createElement("button");
-           btAction.id = "action.${action.name}";
-           btAction.class = "actionButton";
-           btAction.data-tooltip = "${action.comment}";
+         const btId = `action.${action.name}`;
+         if (!($panelStat === null)) {console.log(btId)};
+         var $btAction = document.getElementById( btId);
+         if ($btAction === null) {
+           $btAction = document.createElement("button");
+           $btAction.id = btId;
+           $btAction.class = "actionButton";
+           $btAction.setAttribute('data-tooltip', action.comment);
 
-           btAction.onmouseover = ()=>{showHint(e,'${action.name}')};
-           btAction.onmouseout = ()=>{hideHint(e,'${action.name}')};
-           btAction.caption = action.caption;
+           $btAction.onmouseover = (e)=>{showHint(e,action.name)};
+           $btAction.onmouseout = (e)=>{hideHint(e,action.name)};
+           $btAction.caption = action.caption;
+           $panelStat.appendChild($btAction);
+           $btAction.show = true;
          }
 
      });
@@ -65,8 +68,8 @@ const fillBarAction = {
 
 /* hint mechanic */
 export function showHint (e,controlName) {
-    const control = Document.getElementByID('controlName')
-    const tooltip = Document.getElementByID('tooltip')
+    const control = Document.getElementById(controlName)
+    const tooltip = Document.getElementById('tooltip')
     tooltip.top = e.pageY + 5
     tooltip.left = e.pageX + 5
     tooltip.innerText = control.data-tooltip
@@ -74,8 +77,8 @@ export function showHint (e,controlName) {
     console.log(`show tooltip`)
 }
  export function hideHint (e,controlName) {
-     const control = Document.getElementByID('controlName')
-     const tooltip = Document.getElementByID('tooltip')
+     const control = Document.getElementById(controlName)
+     const tooltip = Document.getElementById('tooltip')
      tooltip.top = 0
      tooltip.left = 0
      tooltip.hide()
