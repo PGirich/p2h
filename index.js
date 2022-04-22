@@ -1,10 +1,10 @@
 
  import {loadActionsList, actionsList, hero} from "./p2hdatamodel.js";
 
- const $panelStat = document.getElementById("panelStat")
+ const $panelStat = document.getElementById("panelStat");
 
- loadActionsList()
- showActions()
+ loadActionsList();
+ showActions();
 
  function showActions() {
      let htmlCode = `actions <br>`;
@@ -16,14 +16,15 @@
            btAction.id = "action.${action.name}";
            btAction.class = "actionButton";
            btAction.data-tooltip = "${action.comment}";
-           btAction.onmouseover = ()->{showHint(e,'${action.name}')};
-           btAction.onmouseout = ()->{hideHint(e,'${action.name}')};
+
+           btAction.onmouseover = ()=>{showHint(e,'${action.name}')};
+           btAction.onmouseout = ()=>{hideHint(e,'${action.name}')};
            btAction.caption = action.caption;
          }
 
-     })
+     });
      //panelStat.innerHTML = htmlCode
-     console.log(`show actions `+htmlCode)
+     console.log(`show actions `+htmlCode);
  }
 
  console.log(`hello world`)
