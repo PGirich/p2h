@@ -3,7 +3,7 @@ import { loadActionsList, actionsList, hero } from './p2hdatamodel.js';
 const $panelStat = document.getElementById('panelStat');
 console.log($panelStat);
 loadActionsList();
-showActions();
+showActions(); 
 
 function showActions() {
   let htmlCode = `actions <br>`;
