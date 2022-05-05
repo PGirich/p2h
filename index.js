@@ -16,18 +16,19 @@ function showActions() {
     if ($btAction === null) {
       $btAction = document.createElement('button');
       $btAction.id = btId;
-      $btAction.class = 'actionButton';
+      $btAction.className = "actionButton";
+      $btAction.style.className = "actionButton";
       $btAction.setAttribute('data-tooltip', action.comment);
 
       $btAction.onmouseover = (e) => {
-        showHint(e, action.name);
+        showHint(e, btId);
       };
       $btAction.onmouseout = (e) => {
-        hideHint(e, action.name);
+        hideHint(e, btId);
       };
-      $btAction.caption = action.caption;
+      $btAction.textContent = action.caption;
       $panelStat.appendChild($btAction);
-      $btAction.show = true;
+      $btAction.style.visibility = true;
     }
   });
   //panelStat.innerHTML = htmlCode
@@ -61,19 +62,19 @@ const fillBarAction = {
 
 /* hint mechanic */
 export function showHint(e, controlName) {
-  const control = document.getElementById(controlName);
-  const tooltip = document.getElementById('tooltip');
-  tooltip.top = e.pageY + 5;
-  tooltip.left = e.pageX + 5;
-  tooltip.innerText = control.data - tooltip;
-  tooltip.show();
+  const $control = document.getElementById(controlName);
+  const $tooltip = document.getElementById('tooltip');
+  $tooltip.top = e.pageY + 5;
+  $tooltip.left = e.pageX + 5;
+  $tooltip.innerText = $control.getAttribute('data-tooltip');
+  $tooltip.style.visibility = true;
   console.log(`show tooltip`);
 }
 export function hideHint(e, controlName) {
-  const control = document.getElementById(controlName);
-  const tooltip = document.getElementById('tooltip');
-  tooltip.top = 0;
-  tooltip.left = 0;
-  tooltip.hide();
+  const $control = document.getElementById(controlName);
+  const $tooltip = document.getElementById('tooltip');
+  $tooltip.top = 0;
+  $tooltip.left = 0;
+  $tooltip.style.visibility = false;
   console.log(`hide tooltip`);
 }
