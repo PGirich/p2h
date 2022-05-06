@@ -1,3 +1,7 @@
+// Import stylesheets
+import './style.css';
+
+// Import modules
 import { loadActionsList, actionsList, hero } from './p2hdatamodel.js';
 
 const $panelStat = document.getElementById('panelStat');
