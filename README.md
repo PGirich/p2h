@@ -31,10 +31,11 @@ knowledge - знания
   type:     "action",                       // type
   group:    "process",                      // group   
   subgroup: "",                             // subgroup
-  level:    "earth"                         // level
+  level:    "earth",                        // level
+  hidden:   false,                          // to hide from user
   caption:  "begging",                      // display text
   comment:  "begging passersby for money",  // tooltip text
-  addCond:  [{prop:'filth',op:`<`, val:1}], // unlock conditions
+  unlockCond: [{prop:'filth',op:`<`,val:1}],// unlock conditions
   enableCond: [],                           // access conditions
   ticResult:  [{prop:'stamina',cost:0.3}],  // tic effects
   actionTime: 8,                            // time length in tics
@@ -44,9 +45,24 @@ knowledge - знания
 ====== ХАРАКТЕРИСТИКИ АРТЕФАКТОВ
   unlock:   false,                           // 
   access:   false,
+  active:   false,    
   useCount: 0,
   skill:    0,
   skillMax: 0,
+
+=======================================================
+====== ВИДЫ РЕЗУЛЬТАТОВ
+  изменение ресурса
+  разблокирование/ заблокирование
+
+
+
+
+
+
+
+
+
 
 
 
