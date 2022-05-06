@@ -1,5 +1,5 @@
 // Import stylesheets
-import './style.css';
+import './index.css';
 
 // Import modules
 import { loadActionsList, actionsList, hero } from './p2hdatamodel.js';
