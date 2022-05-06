@@ -1,3 +1,11 @@
 # p2h
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/p2h)
+action - действие, инициируемое пользователем, изменяет ресурсы и
+  группы: instant  
+resource - имущество, ограничено объемом склада
+
+
+
+
+
+
