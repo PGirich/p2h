@@ -1,0 +1,127 @@
+/* general styles */
+body {
+  margin: 10px;
+  background-color: #ffffff;
+  padding: 0 2px 2px 2px;
+  border: 1px solid black;
+}
+p {
+  color: black;
+  margin: unset;
+  font-style: unset;
+}
+h1 {
+  color: darkred;
+  margin: unset;
+  font-style: italic;
+}
+h6 {
+  color: black;
+  margin: unset;
+}
+
+hr {
+  margin-top:1px;
+  margin-bottom:0;
+  border:0;
+  height:1px;
+  border-top: 1px solid #ccc;
+}
+/* hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}*/
+
+/* hints */
+#tooltip {
+  z-index: 9999;
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 0px;
+  width: 250px;
+  background-color: #fff;
+  padding: 5px 10px 5px 10px;
+  color: #000;
+  border: 1px solid #888;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px #555;
+  box-sizing: ;
+}
+
+/* main UI table */
+.mainUI {
+  table-layout: fixed;
+  width: 100%;
+  white-space: nowrap;
+  border-collapse: collapse;
+  border: 1px dot-dot-dash darkcyan;
+}
+.mainUI td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px dotted black;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+.mainUI tfoot {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: 1px dotted black;
+  border-bottom-width: 0;
+}
+
+#captionStat {
+  width: 200px;
+  text-align: center;
+}
+#captionMenu {
+  width: 50%;
+  text-align: center;
+}
+#captionLog {
+  /*width: 30%;*/
+  text-align: center;
+}
+#panelStat {
+  white-space: normal;
+}
+
+#panelFoot {
+  font-style: normal;
+}
+
+.actionButton {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.actionButton:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.actionButton:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
